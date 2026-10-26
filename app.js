@@ -9,6 +9,7 @@
     keys.forEach(function(k){var v=params.get(k);if(v)attribution[k]=v.slice(0,200);});
     try{localStorage.setItem('hvm_attr',JSON.stringify(attribution));}catch(_){}
   }
+  window.hvmAttr=function(){return Object.assign({},attribution);};
   // Page views are emitted once by the shared tracking head. These events
   // represent interactions only: a calendar click is NOT a confirmed booking.
   function track(name,extra){
